@@ -1,0 +1,15 @@
+<% if @posts.any? %>
+	<% @posts.each do |post| %>
+	    <!-- Example row of columns -->
+	    <div class="row">
+	      <div class="col-md-8">
+	        <h2><%= link_to post.title, post_path(post) %></h2>
+	        <p><%= post.content %></p>
+	        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+	      <hr>
+	      </div>
+	      
+	    </div>
+		
+	<% end %>
+<% end %>	    

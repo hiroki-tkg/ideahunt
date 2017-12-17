@@ -1,0 +1,20 @@
+<%= h(flash[:notice]) %>
+
+<%= form_for @post do |f| %>
+	<p>
+	    <%= f.text_field :title  %>
+		<% if @post.errors.messages[:title].any? %>
+			<span class="error"><%= @post.errors.messages[:title][0] %></span>
+		<% end %>
+	</p>
+
+	<p>
+	    <%= f.text_field :content  %>
+		<% if @post.errors.messages[:content].any? %>
+			<span class="error"><%= @post.errors.messages[:content][0] %></span>
+		<% end %>
+	</p>
+
+    <%= f.submit %>
+
+<% end %>
