@@ -4,16 +4,23 @@
     <title>Ideahunt</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
   <body>
+
+	<% flash.each do |key, value| %>
+		<p class="alert alert-primary" role="alert"><%= notice %></p>
+	<% end %>
+
+	
     <div class="row">
       <div class="col-md-8">
 
@@ -24,24 +31,31 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-	        <ul class="navbar-nav mr-auto">
-	          <li class="nav-item active">
-	            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-	          </li>
+	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item">
-	            <a class="nav-link" href="#">Link</a>
-	          </li>
-	          <li class="nav-item">
-	            <a class="nav-link disabled" href="#">Disabled</a>
-	          </li>
-	          <li class="nav-item dropdown">
-	            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-	            <div class="dropdown-menu" aria-labelledby="dropdown01">
-	              <a class="dropdown-item" href="#">Action</a>
-	              <a class="dropdown-item" href="#">Another action</a>
-	              <a class="dropdown-item" href="#">Something else here</a>
-	            </div>
-	          </li>
+	            <a class="nav-link" href="#">About</a>
+	          </li>	
+				<!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
+			    <% if user_signed_in? %> 
+			        <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
+			        <!-- *_path はUserモデルを作成したときに、
+			        deviseにより自動で作成されてますので、rake routesで確認できます -->
+		          	<li class="nav-item">
+			        	<span class="nav-link"><%= current_user.email %></span>
+			       	</li>
+		          	<li class="nav-item">
+				       	<%= link_to "Log Out", destroy_user_session_path, { :method => :delete, :class => 'nav-link'} %>
+				    </li>
+				
+				<% else %>
+			        <li class="nav-item">
+						<%= link_to "Sign Up", new_user_registration_path, {:class => 'nav-link'} %>
+					</li>
+			        <li class="nav-item">
+						<%= link_to "Login", new_user_session_path, {:class => 'nav-link'} %>
+					</li>
+				<% end %>
+
 	        </ul>
 	        <%= link_to 'Post Idea', apply_posts_path, class: "btn btn-outline-success my-2 my-sm-0" %>
 	        </a>
@@ -58,7 +72,6 @@
 		        <div class="container">
 		          <h1 class="display-3">Hello, world!</h1>
 		          <p>If you have idea but can not create by yourself, write here! Somebody will create instead of you!</p>
-		          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
 		        </div>
 		      </div>
 
@@ -73,9 +86,16 @@
     </main>
 
 
-    <footer class="container">
-      <p>&copy; Company 2017</p>
-    </footer>
+	<div class="footer_wrapper">
+	    <footer class="container">
+	      <p>&copy; Idea Hunt 
+	      <% 
+	      d = Date.today
+	      print(d.year, "year")
+	      %>
+	      </p>
+	    </footer>
+	</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
