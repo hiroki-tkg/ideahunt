@@ -1,24 +1,20 @@
-# README
+# Ideahunt.cc
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository is for ideahunt.cc. I was inspired from [Producthunt]('https://producthunt.com'). 
 
-Things you may want to cover:
+Product hunt is the website for the product which is already created and launched. But I guess there are so many product, even just idea in people's mind all over the world.
 
-* Ruby version
+Like..
 
-* System dependencies
+* The guy wants the service, but he can not invest his own time. 
 
-* Configuration
+* The guy think there is the opportunity and possibility but can not create by hisself.  
 
-* Database creation
 
-* Database initialization
+Something like that.
 
-* How to run the test suite
+This is because i was looking for the idea to create and start my business, but can not decide and find best idea. 
 
-* Services (job queues, cache servers, search engines, etc.)
+Please check website out. Thanks
 
-* Deployment instructions
-
-* ...
+HIRO
