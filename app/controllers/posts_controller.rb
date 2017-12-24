@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+	# before_action :set_post
+
 	def index
 		@posts = Post.all.order(created_at: 'desc')
 	end
@@ -19,9 +21,11 @@ class PostsController < ApplicationController
 	def create
 	  	@post = Post.new(post_params)
 	  	if @post.save
-		  	redirect_to action: 'apply', notice: 'success!'
+	  		flash[:notice] = 'success!'
+		  	redirect_to action: 'apply'
 	  	else
-	  		redirect_to action: 'apply', notice: 'fail!'	  		
+	  		flash[:notice] = 'Fail'
+	  		redirect_to action: 'apply'
 	  	end	
 	end
 
@@ -39,6 +43,23 @@ class PostsController < ApplicationController
 		@post.destroy
 		redirect_to controller: 'admins', action: 'index'
 	end
+
+	# Votingに関して
+	def like
+	  	@post = Post.find(params[:id])			
+		@post.liked_by current_user
+		redirect_to @post, notice: "You liked this!"
+	end
+
+	def dislike
+		@post.disliked_by current_user
+		redirect_to @post, notice: "You disliked this!"
+	end
+
+	def unvote
+		@post.unvote_by current_user
+		redirect_to @post, notice: "You unvoted this!"
+	end	
 
 	private
 	  	def post_params

@@ -45,6 +45,7 @@ main{
 	h2{
 	    font-size: 18px;
 	    font-weight: bold;	
+	    line-height: 28px;	    
 	}
 	.content{
 		color: #898D8C;
@@ -55,9 +56,17 @@ main{
 .footer_wrapper{
 	width: 100%;
 	background: #fff;
+	margin-top: 40px;	
 }
 
 footer{
 	height: 150px;
     padding: 40px 0;	
+}
+
+.post_header{
+    min-height: 60px;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    margin-bottom: 20px;
 }
