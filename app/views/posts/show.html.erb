@@ -21,18 +21,14 @@
 				<%= simple_format @post.content %>
 			</div>
 		</div>
-		<div class="col-sm-4">
-			<div class="content">
-				サイドバー
-			</div>
-		</div>
+		<%= render partial: "sidebar" %>
 	</div>
 </div>
 
 <hr />
 
 <div class="row">
-	<div class="col-sm-8">
+	<div class="col-sm-8 comment_area">
 
 		<% if @post.comments.any? %>
 			<h2><%= @post.comments.count %> Comments</h2>
@@ -59,12 +55,14 @@
 
 		<% else %>
 
-			Please be first commenter!
+			<div class="add_comment_text">最初のコメントを投稿してみよう！</div>
 
 		<% end %>
 
 		<% if user_signed_in? %> 
-			Leave comment / Feedback to this idea.
+			
+			<div class="add_comment_text">コメントを投稿してみる！</div>
+
 			<%= form_for([@post, @post.comments.build]) do |f| %>
 
 				<div class="form-group">			
@@ -81,9 +79,15 @@
 
 		<% else %>
 			
-			Sign up and comment it!
-			<%= link_to "Sign Up", new_user_registration_path, {:class => 'nav-link'} %>
-			<%= link_to "Login", new_user_session_path, {:class => 'nav-link'} %>
+			<div class="add_comment_text">会員登録してこのアイディアにコメントをしてみよう！</div>
+			<div class="btn-area">
+				
+				<%= link_to "Sign Up", new_user_registration_path, {:class => 'btn btn-primary btn-big'} %>
+				<div class="or">OR</div>
+				<%= link_to "Login", new_user_session_path, {:class => 'btn btn-primary btn-big'} %>
+
+			</div>
+
 
 		<% end %>
 	</div>

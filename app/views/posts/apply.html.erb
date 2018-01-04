@@ -1,24 +1,36 @@
 <%= flash[:notice] %>
 
-<h2>アイディアを投稿する</h2>
+	<div class="apply_post_area">
+		<h2>アイディアを投稿する</h2>
+		<p class="apply_post_desc">
+			アイディアを気軽に投稿してみましょう！<br />
+			コメントでフィードバックがもらえたり、
+			あなたに代わって誰かが実現してくれるかもしれません！
+		</p>
+	
+		<hr />
 
-<%= form_for @post do |f| %>
-	<p>
-		<%= f.collection_select :category_post_ids, Category.all, :id, :name, {}, {class: 'custom-select'} %>
-	</p>
+		<%= form_for @post do |f| %>
+			<p>
+				<%= f.collection_select :category_post_ids, Category.all, :id, :name, {}, {class: 'custom-select'} %>
+			</p>
+			<p class="form-group">
 
-    <%= f.text_field :title, placeholder: 'Title', :class => 'form-group' %>
-		<% if @post.errors.messages[:title].any? %>
-			<span class="error"><%= @post.errors.messages[:title][0] %></span>
+			    <%= f.text_field :title, placeholder: 'Title', :class => 'form-control', :style => 'width: 400px;' %>
+				<% if @post.errors.messages[:title].any? %>
+					<span class="error"><%= @post.errors.messages[:title][0] %></span>
+				<% end %>
+
+			</p>				
+
+			<p>
+			    <%= f.text_area :content, placeholder: 'Content', :class => 'form-control', :size => "10x5", :style => 'width: 400px' %>
+				<% if @post.errors.messages[:content].any? %>
+					<span class="error"><%= @post.errors.messages[:content][0] %></span>
+				<% end %>
+			</p>
+				
+		    <%= f.submit :class => 'btn btn-primary' %>
+
 		<% end %>
-
-	<p>
-	    <%= f.text_area :content, placeholder: 'Content', :class => 'form-control', :size => "10x5", :style => 'width: 400px' %>
-		<% if @post.errors.messages[:content].any? %>
-			<span class="error"><%= @post.errors.messages[:content][0] %></span>
-		<% end %>
-	</p>
-		
-    <%= f.submit :class => 'btn btn-primary' %>
-
-<% end %>
+	</div>

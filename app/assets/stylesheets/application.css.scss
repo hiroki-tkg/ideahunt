@@ -67,6 +67,53 @@ footer{
 .post_header{
     min-height: 60px;
     border-bottom: 1px solid #ccc;
-    padding: 20px 0;
-    margin-bottom: 20px;
+    padding: 20px 0 15px 0;
+    margin-bottom: 15px;    
+}
+
+.post_meta{
+	font-size: 10px;
+    color: #515151;	
+}
+
+.sidebar{
+	img{
+		width: 100%;
+	}
+}
+
+.apply_post_area{
+	margin-top: 20px;
+}
+
+.apply_post_desc{
+	font-size: 14px;	
+}
+
+.add_comment_text{
+	font-size: 14px;
+}
+
+.btn-area{
+	margin: 20px 0;
+}
+
+.btn-big{
+	width: 200px;
+}
+
+.or{
+	padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.comment_area{
+	text-align: center;
+	padding-top: 40px;
+}
+
+
+.field{
+	margin-top: 10px;
 }

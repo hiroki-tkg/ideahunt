@@ -44,6 +44,10 @@ class PostsController < ApplicationController
 		redirect_to controller: 'admins', action: 'index'
 	end
 
+	def about
+
+	end
+
 	# Votingに関して
 	def like
 	  	@post = Post.find(params[:id])			
