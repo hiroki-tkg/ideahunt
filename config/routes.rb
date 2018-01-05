@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
   	collection do
   		get :apply
+      get :about
   	end
     resources :comments, only: [:create, :destroy]
   end
