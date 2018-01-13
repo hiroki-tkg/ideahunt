@@ -1,0 +1,18 @@
+<% if @posts.any? %>
+    <div class="row">
+      <div class="col-md-8">
+		<% @posts.each do |post| %>
+	    <!-- Example row of columns -->
+	        <h2><%= link_to post.title, post_path(post) %></h2>
+	        <p class="content"><%= post.content.truncate(100) %></p>
+	      <hr>
+		
+		<% end %>
+      </div>
+	  <%= render partial: 'sidebar' %>
+
+	</div>
+	
+
+<% end %>	    
+
