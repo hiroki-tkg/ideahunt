@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+/* line 16, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+body {
+  padding-top: 3.5rem;
+  background: #f9f9f9;
+  color: #515151;
+}
+
+/* line 23, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.logo {
+  width: 200px;
+}
+
+/* line 27, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+nav {
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+/* line 32, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .active > .nav-link:hover {
+  color: #515151;
+  font-size: 14px;
+}
+
+/* line 40, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.navbar-nav {
+  margin-right: 20px;
+}
+
+/* line 44, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+main {
+  min-height: 500px;
+}
+/* line 46, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+main h2 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 28px;
+}
+/* line 51, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+main .content {
+  color: #898D8C;
+  font-size: 14px;
+}
+
+/* line 57, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.footer_wrapper {
+  width: 100%;
+  background: #fff;
+  margin-top: 40px;
+}
+
+/* line 63, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+footer {
+  height: 150px;
+  padding: 40px 0;
+}
+
+/* line 68, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.post_header {
+  min-height: 60px;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0 15px 0;
+  margin-bottom: 15px;
+}
+
+/* line 75, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.post_meta {
+  font-size: 10px;
+  color: #515151;
+}
+
+/* line 81, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.sidebar img {
+  width: 100%;
+}
+
+/* line 86, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.apply_post_area {
+  margin-top: 20px;
+}
+
+/* line 90, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.apply_post_desc {
+  font-size: 14px;
+}
+
+/* line 94, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.add_comment_text {
+  font-size: 14px;
+}
+
+/* line 98, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.btn-area {
+  margin: 20px 0;
+}
+
+/* line 102, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.btn-big {
+  width: 200px;
+}
+
+/* line 106, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.or {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* line 112, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.comment_area {
+  text-align: center;
+  padding-top: 40px;
+}
+
+/* line 118, /Users/hiroki_tkg/git/ideahunt/app/assets/stylesheets/application.css.scss */
+.field {
+  margin-top: 10px;
+}
