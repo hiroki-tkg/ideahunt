@@ -26,8 +26,6 @@ test:
 production:
   adapter:  mysql2   # postgresの場合はadapterをpostgresql
   encoding: utf8
-  database: rails
-  username: root
-  password: 
-  host:     127.0.0.1
-  port:     
+  database: heroku_ff1bf88d97e2d34
+  username: b39b0b162fe987
+  password: <%= ENV['DATABASE_PASSWORD'] %>
