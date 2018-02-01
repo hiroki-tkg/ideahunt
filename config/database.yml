@@ -29,3 +29,4 @@ production:
   database: heroku_ff1bf88d97e2d34
   username: b39b0b162fe987
   password: <%= ENV['DATABASE_PASSWORD'] %>
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
