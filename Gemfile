@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'mysql2'
+gem 'rails_admin'
 
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'rails-i18n'
