@@ -26,7 +26,7 @@ test:
 production:
   adapter:  mysql2   # postgresの場合はadapterをpostgresql
   encoding: utf8
-  database: heroku_ff1bf88d97e2d34
+  database: <%= ENV['DATABASE_URL'] %>
   username: b39b0b162fe987
   password: <%= ENV['DATABASE_PASSWORD'] %>
   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
